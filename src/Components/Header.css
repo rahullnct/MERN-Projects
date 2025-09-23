@@ -1,0 +1,164 @@
+/* Navbar Wrapper */
+.navbar_start {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Navbar Inner Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Logo */
+.logo a {
+  color: #3b0764; /* deep violet for corporate touch */
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #9333ea; /* purple hover */
+}
+
+/* Navbar Links */
+.navbar_links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar_links li a {
+  color: #1e293b;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar_links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #9333ea;
+  transition: width 0.3s ease;
+}
+
+.navbar_links li a:hover {
+  color: #9333ea;
+}
+
+.navbar_links li a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown / Profile Section */
+.all_dropdowns {
+  display: flex;
+  align-items: center;
+}
+
+.login_pages {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar_profileimage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #9333ea;
+}
+
+.navbar_icon {
+  font-size: 0.9rem;
+  color: #1e293b;
+  transition: transform 0.3s ease;
+}
+
+.login_pages:hover .navbar_icon {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.page_links {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  overflow: hidden;
+  z-index: 1100;
+}
+
+.page_link_wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page_link_wrapper li {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.page_link_wrapper li:hover {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+/* CTA Button */
+.btn {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #9333ea, #6366f1);
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar_links {
+    display: none;
+  }
+}
