@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"; 
-import { assets,specialityData} from "../assets/assets.js";
+import { assets,specialityData,doctors} from "../assets/assets.js";
  import '../CSS_Folders/Home.css';
   function Home(){
      const navigate=useNavigate(); 
@@ -32,8 +32,35 @@ import { assets,specialityData} from "../assets/assets.js";
                                       </div>
                                        </div>
                                     </section>
-                                    <section className="doctors_view">
-                                         </section> 
+                    <section className="doctors_view_wrapper">
+                 <div className="doctor_view_container">
+                   <h1 className="doctor_view_heading">Top Doctor to Book</h1>
+                   <p className="doctor_view_subheading">Simply browse through Our extensive list of Trusted doctors</p>
+                   <div className="all_doctors">
+                    {
+                        doctors.map((only_doctor)=>(
+                        <div className="single_doctor_container" onClick={()=> navigate(`/doctor/${only_doctor._id}`)}>
+                                <img src={only_doctor.image} alt='doctor_image' className="doctor_image"/>
+                                 <li className="available_or_not">Available</li>
+                                 <span className="doctor_name">{only_doctor.name}</span>
+                                 <span className="doctor_speciality">{only_doctor.speciality}</span>
+                        </div>
+                        ))
+                    }
+                   </div>
+                 </div>
+             </section> 
+             <section className="second_last_wrapper">
+                 <div className="second_last_container">
+                     <div className="first_part"> 
+                        <div className="second_last_headings">
+                            <h1 className="heading">Book Appointment with 100+ Trusted Doctors</h1>
+                            <button className="second_last_btn" onClick={()=> navigate('/signup')}>Create Account</button> 
+                        </div>
+                    <img src={assets.appointment_img} alt="second_lst_image" className="second_lst_image"/>
+                </div> 
+                </div>
+              </section>
             </div>
             </div> 
             ) 

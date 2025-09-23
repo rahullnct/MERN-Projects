@@ -9,6 +9,8 @@ import Doctor from './Pages/Doctor';
 import Signup from './Authentication/Signup';
 import Login from './Authentication/Login';
 import NewComponent from './Components/NewComponent';
+import Appointment from './Pages/Appointment';
+
 function App() {
   return (
   <div className='main_wrapper'>
@@ -17,8 +19,10 @@ function App() {
   <Route index element={<Home />} />
   <Route path="about" element={<About />}/>
   <Route path="contact" element={<Contact />}/>
-  <Route path="doctor" element={<Doctor />} />
+  <Route path="doctor/:id" element={<Doctor />} />
   <Route path="signup" element={<Signup />} />
+  <Route path="appointment" element={<Appointment/>} />
+  {/* <Route path="doc_info" element={<Appointment/>} /> */}
   <Route path="login" element={<Login />} />
   </Route>
   </Routes>
