@@ -1,147 +1,64 @@
-/* Navbar Wrapper */
 .navbar_start {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.25); /* subtle dark glass effect */
+  backdrop-filter: blur(12px);
+  color: #fff;
   padding: 0.8rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Navbar Inner Layout */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* Logo */
 .logo a {
-  color: #3b0764; /* deep violet for corporate touch */
-  font-size: 1.8rem;
-  font-weight: 700;
+  color: #ffd700; /* golden shade matches gradient */
+  font-size: 1.6rem;
+  font-weight: bold;
   text-decoration: none;
-  letter-spacing: 1px;
   transition: color 0.3s ease;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .logo a:hover {
-  color: #9333ea; /* purple hover */
+  color: #ffb6c1; /* soft pink on hover */
 }
 
-/* Navbar Links */
 .navbar_links {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .navbar_links li a {
-  color: #1e293b;
+  color: #fdfdfd;
   font-weight: 600;
   text-decoration: none;
   font-size: 1rem;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.navbar_links li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: #9333ea;
-  transition: width 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar_links li a:hover {
-  color: #9333ea;
+  color: #ff64b4; /* pink highlight */
+  transform: scale(1.05);
 }
 
-.navbar_links li a:hover::after {
-  width: 100%;
-}
-
-/* Dropdown / Profile Section */
-.all_dropdowns {
-  display: flex;
-  align-items: center;
-}
-
-.login_pages {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-  cursor: pointer;
-}
-
-.navbar_profileimage {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #9333ea;
-}
-
-.navbar_icon {
-  font-size: 0.9rem;
-  color: #1e293b;
-  transition: transform 0.3s ease;
-}
-
-.login_pages:hover .navbar_icon {
-  transform: rotate(180deg);
-}
-
-/* Dropdown Menu */
-.page_links {
-  position: absolute;
-  top: 55px;
-  right: 0;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  width: 200px;
-  overflow: hidden;
-  z-index: 1100;
-}
-
-.page_link_wrapper {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.page_link_wrapper li {
-  padding: 12px 16px;
-  font-size: 0.95rem;
-  color: #1e293b;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.page_link_wrapper li:hover {
-  background: #f3e8ff;
-  color: #9333ea;
-}
-
-/* CTA Button */
 .btn {
   padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, #9333ea, #6366f1);
+  background: linear-gradient(135deg, #ffb6c1, #9370db); /* pink → purple */
   border: none;
   font-size: 1rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
@@ -153,11 +70,10 @@
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .navbar_links {
     display: none;
   }
