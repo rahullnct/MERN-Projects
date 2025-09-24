@@ -169,11 +169,17 @@
     text-transform: capitalize;
 }
 /* Wrapper Section */
-.doctors_view_wrapper {
-  background: #f9fafb; /* light background */
+/* .doctors_view_wrapper {
+  background: #f9fafb; 
   padding: 60px 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+  
+} */
+ .doctors_view_wrapper{
+    background: #f9fafb;
+    padding: 60px 20px;
+    justify-content: center;
+ }
 
 /* Container */
 .doctor_view_container {
@@ -204,7 +210,23 @@
   justify-content: center;
   align-items: stretch;
 }
+.show_all_doctors_btn {
+  margin: 40px auto 0 auto;  /* auto left & right makes it centered */
+  display: block;            /* ensures margin auto works */
+  padding: 12px 30px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+.show_all_doctors_btn:hover {
+  background: #155ab6;
+}
 /* Single Doctor Card */
 .single_doctor_container {
   background: #fff;

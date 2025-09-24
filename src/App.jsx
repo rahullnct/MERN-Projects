@@ -10,6 +10,8 @@ import Signup from './Authentication/Signup';
 import Login from './Authentication/Login';
 import NewComponent from './Components/NewComponent';
 import Appointment from './Pages/Appointment';
+import AllDoctor from './Pages/AllDoctor';
+import SpecilityDoctor from './Components/SpecilityDoctor';
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
   <Route path="doctor/:id" element={<Doctor />} />
   <Route path="signup" element={<Signup />} />
   <Route path="appointment" element={<Appointment/>} />
-  {/* <Route path="doc_info" element={<Appointment/>} /> */}
+  <Route path="alldoctors" element={<AllDoctor/>} />
+   <Route path="specilist_doctor/:specility" element={<SpecilityDoctor/>} />
   <Route path="login" element={<Login />} />
   </Route>
   </Routes>

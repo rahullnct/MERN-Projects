@@ -24,7 +24,7 @@ import { assets,specialityData,doctors} from "../assets/assets.js";
                             <div className="main_speciality">
                                 {
                                  specialityData.map((special,index)=>(
-                                    <div className="speciality_img_heading" key={index}>
+                                    <div className="speciality_img_heading"  onClick={()=>navigate(`/specilist_doctor/${special.speciality}`)}>
                                     <img src={special.image} alt='speciality_image' className="speciality_image"/>
                                      <span className="special_heading">{special.speciality}</span> </div> )) 
                                      }
@@ -38,7 +38,7 @@ import { assets,specialityData,doctors} from "../assets/assets.js";
                    <p className="doctor_view_subheading">Simply browse through Our extensive list of Trusted doctors</p>
                    <div className="all_doctors">
                     {
-                        doctors.map((only_doctor)=>(
+                        doctors.slice(0,12).map((only_doctor)=>(
                         <div className="single_doctor_container" onClick={()=> navigate(`/doctor/${only_doctor._id}`)}>
                                 <img src={only_doctor.image} alt='doctor_image' className="doctor_image"/>
                                  <li className="available_or_not">Available</li>
@@ -48,6 +48,7 @@ import { assets,specialityData,doctors} from "../assets/assets.js";
                         ))
                     }
                    </div>
+                   <button className='show_all_doctors_btn' onClick={()=>navigate('/alldoctors')}>Show More</button>
                  </div>
              </section> 
              <section className="second_last_wrapper">
