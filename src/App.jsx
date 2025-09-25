@@ -22,8 +22,9 @@ function App() {
   <Route path="/" element={<NewComponent />}>
   <Route index element={<Home />} />
   <Route path="about" element={<About />}/>
-  <Route path="contact" element={<Contact />}/>
-  <Route path="doctor/:id" element={<Doctor />} />
+  <Route path="contact" element={<Contact/>}/>
+  <Route path="doctor/:id" element={<Doctor/>} />
+  <Route path="alldoctors" element={<AllDoctor/>} />
   <Route path="signup" element={<Signup />} />
   <Route path="appointment" element={<Appointment/>} />
   <Route path="alldoctors/:speciality" element={<AllDoctor/>} />

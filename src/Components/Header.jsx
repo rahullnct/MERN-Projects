@@ -19,7 +19,7 @@ function Header(){
                 <ul className="navbar_links">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/about'>AboutUs</Link></li>
-                    <li><Link to='/doctor'>Doctors</Link></li>
+                    <li><Link to='/alldoctors'>Doctors</Link></li>
                     <li><Link to='/contact'>Contact</Link></li>
                 </ul>
                 <div className="all_dropdowns">
