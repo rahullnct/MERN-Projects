@@ -12,10 +12,12 @@ import NewComponent from './Components/NewComponent';
 import Appointment from './Pages/Appointment';
 import AllDoctor from './Pages/AllDoctor';
 import SpecilityDoctor from './Components/SpecilityDoctor';
+import { ScrollTop } from './Components/ScrollTop';
 
 function App() {
   return (
   <div className='main_wrapper'>
+  <ScrollTop/>
   <Routes>
   <Route path="/" element={<NewComponent />}>
   <Route index element={<Home />} />
@@ -24,8 +26,8 @@ function App() {
   <Route path="doctor/:id" element={<Doctor />} />
   <Route path="signup" element={<Signup />} />
   <Route path="appointment" element={<Appointment/>} />
-  <Route path="alldoctors" element={<AllDoctor/>} />
-   <Route path="specilist_doctor/:specility" element={<SpecilityDoctor/>} />
+  <Route path="alldoctors/:speciality" element={<AllDoctor/>} />
+   {/* <Route path="specilist_doctor/:specility" element={<SpecilityDoctor/>} /> */}
   <Route path="login" element={<Login />} />
   </Route>
   </Routes>

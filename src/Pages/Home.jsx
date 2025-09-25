@@ -24,7 +24,7 @@ import { assets,specialityData,doctors} from "../assets/assets.js";
                             <div className="main_speciality">
                                 {
                                  specialityData.map((special,index)=>(
-                                    <div className="speciality_img_heading"  onClick={()=>navigate(`/specilist_doctor/${special.speciality}`)}>
+                                    <div className="speciality_img_heading"  onClick={()=>navigate(`/alldoctors/${special.speciality}`)}>
                                     <img src={special.image} alt='speciality_image' className="speciality_image"/>
                                      <span className="special_heading">{special.speciality}</span> </div> )) 
                                      }
