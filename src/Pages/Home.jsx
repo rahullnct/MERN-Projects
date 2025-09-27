@@ -8,19 +8,19 @@ import { assets,specialityData,doctors} from "../assets/assets.js";
          <div className="home_container">
              <div className="main_part">
                  <div className="headings_subheadings">
-                    <h1 className="heading">Book Appointment with Trusted Doctors</h1>
+                    <h1 className="heading">Book Doctors You Can Trust, Anytime</h1>
                     <div className="subpart"> 
                         <img src={assets.group_profiles} className="home_group_img" alt='home_left_group_image'/>
-                        <p className="subheading">Simply Browse through the extensive list of trusted doctors. Schedule you appointment hasiie free</p> 
+                        <p className="subheading">Because better health starts with the right doctor, available when you need them most.</p> 
                         </div> 
                         <button className="home_main_btn" onClick={()=> navigate('/appointment')}>Book Appointment Now</button> 
                         </div> 
                         <img src={assets.header_img} alt="homepage_main_image" className="main_img"/> 
-                        </div> 
+              </div> 
                         <section className="speciality">
                             <div className="speciality_wrapper">
-                            <h3 className="speciality_heading">Find by Speciality</h3> 
-                            <p className="speciality_subheading">Simply browse through our extensive list ot trusted doctors, shedule your appointment free </p> 
+                            <h3 className="speciality_heading">Explore Doctors Across All Specialties</h3> 
+                            <p className="speciality_subheading">Find qualified doctors across multiple specialties, book appointments seamlessly, and get the care you deserve. </p> 
                             <div className="main_speciality">
                                 {
                                  specialityData.map((special,index)=>(
@@ -34,11 +34,11 @@ import { assets,specialityData,doctors} from "../assets/assets.js";
                                     </section>
                     <section className="doctors_view_wrapper">
                  <div className="doctor_view_container">
-                   <h1 className="doctor_view_heading">Top Doctor to Book</h1>
-                   <p className="doctor_view_subheading">Simply browse through Our extensive list of Trusted doctors</p>
+                   <h1 className="doctor_view_heading">Your Best Choices for Trusted Care</h1>
+                   <p className="doctor_view_subheading">Quality healthcare made simple with top-rated doctors, seamless bookings, and reliable support at every step of your journey.</p>
                    <div className="all_doctors">
                     {
-                        doctors.slice(0,12).map((only_doctor)=>(
+                        doctors.slice(0,10).map((only_doctor)=>(
                         <div className="single_doctor_container" onClick={()=> navigate(`/doctor/${only_doctor._id}`)}>
                                 <img src={only_doctor.image} alt='doctor_image' className="doctor_image"/>
                                  <li className="available_or_not">Available</li>
