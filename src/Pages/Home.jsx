@@ -3,6 +3,11 @@ import { assets,specialityData,doctors} from "../assets/assets.js";
  import '../CSS_Folders/Home.css';
   function Home(){
      const navigate=useNavigate(); 
+
+      const date= new Date();
+      const Today= date.getDate();
+      console.log(Today);
+      console.log("Today Date",new Date(date));
      return( 
      <div className="home_wrapper">
          <div className="home_container">

@@ -266,7 +266,6 @@
   margin-bottom: 12px;
 }
 
-/* Doctor Name */
 .doctor_name {
   display: block;
   font-size: 22px;
@@ -275,13 +274,13 @@
   margin-bottom: 5px;
 }
 
-/* Doctor Speciality */
+
 .doctor_speciality {
   display: block;
   font-size: 17px;
   color: #666;
 }
-/* Wrapper */
+
 .second_last_wrapper {
   background: #f0f9ff; /* soft hospital-like light blue background */
   padding: 60px 20px;

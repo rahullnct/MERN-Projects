@@ -7,20 +7,65 @@ function Doctor(){
     let {id}=useParams();
     console.log(id);
     const {doctors}=useContext(AppContext);
-   
     const[docinfo,setdocinfo]=useState([]);
-
+    const[docSlots,setdocSlots]=useState([]);
+    const[slotTime,setslotTime]=useState(0);
     const all_info= doctors.filter((doc)=>doc._id === id)
-    console.log(all_info);
     const filterdocinfo=()=>{
        setdocinfo(all_info);
     }
+
+    const week=['SUN','MON','TUE','WED','THRU','FRI','SAT','SUN'];
+    const doctorSlots=async()=>{
+      setdocSlots([]);
+      let today= new Date();
+      for(let i=0;i<7;i++){
+        
+        let currentDate= new Date(today);
+        currentDate.setDate(today.getDate()+i);
+
+        let Endtime= new Date();
+        Endtime.setDate(today.getDate()+i);
+        Endtime.setHours(21,0,0,0);
+
+        if(today.getDate() === currentDate.getDate()){
+          currentDate.setHours(currentDate.getHours()>10 ? currentDate.getDate()+1 : 10);
+          currentDate.setMinutes(currentDate.getMinutes()>30 ? 30: 0);
+        }
+        else 
+        {
+          currentDate.setHours(10);
+          currentDate.setMinutes(0);
+        }
+
+        let timeSlots=[];
+        while(currentDate < Endtime){
+          let formattedTime= currentDate.toLocaleTimeString([],{ hour:'2-digit',minute:'2-digit'})
+          
+          timeSlots.push({
+            datetime:new Date(currentDate),
+            time:formattedTime
+          })
+          currentDate.setMinutes(currentDate.getMinutes()+30);
+        }
+        setdocSlots((prev)=>([...prev,timeSlots]));
+
+      }
+
+    }
+
+
     useEffect(()=>{
       filterdocinfo();
     },[])
 
-    const mydate= new Date();
-    console.log(mydate.getDate());
+    useEffect(()=>{
+     doctorSlots();
+    },[])
+
+    useEffect(()=>{
+      console.log(docSlots);
+    },[docinfo]);
 
     return(
         <div className="doctor_wrapper">
@@ -44,6 +89,26 @@ function Doctor(){
              </div>   
             ))
           }
+
+          <div className="all_slots">
+            {
+              docSlots.length && docSlots.map((slots, index)=>(
+                 <div key={index} onClick={()=> setslotTime(index)}>
+                  <span className="day">{slots[0] && week[slots[0].datetime.getDay()]}</span>
+                  <span className="date">{slots[0] && slots[0].datetime.getDate()}</span>
+                 </div>
+              ))
+            }
+          </div>
+          <div className="slottime">
+             {
+              docSlots.length && docSlots[slotTime].map((only_time,index)=>(
+                <div key={index}>
+                  <span className="timming">{only_time.time.toLowerCase()}</span>
+                </div>
+              ))
+             }
+           </div>
         </div>
             
         </div>
