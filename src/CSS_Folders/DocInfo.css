@@ -1,0 +1,163 @@
+.doctor_wrapper{
+    background: #f8fbfd;
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.doctor_container{
+    max-width: 1000px;
+    width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    padding: 30px;
+}
+.single_doctor_info{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    border-bottom: 1px solid #e8eef5;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+.doc_info_img{
+    width: 160px;
+    height: 160px;
+    /* border-radius: 50%; */
+    object-fit: cover;
+    border: 4px solid #e6f0fa;
+}
+.doc_info{
+    flex: 1;
+}
+.doc_name{
+    font-size: 22px;
+    font-weight: 700;
+    color: #1b3a57;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+ .verified_icon{
+    width: 22px;
+    height: 22px;
+}
+.doc_academic{
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: #5a6b7b;
+    margin: 10px 0;
+}
+.doc_degree{
+    font-weight: 600;
+    color: #007bff;
+}
+.doc_speciality{
+    font-weight: 500;
+    color: #28a745;
+}
+.doc_experience{
+    font-weight: 500;
+    color: #ff9800;
+}
+.about_doc{
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1b3a57;
+}
+.doc_about{
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4e5c68;
+    margin-top: 8px;
+}
+.doc_fees{
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color:#007bff;
+}
+.all_slots{
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+.all_slots div{
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+    background: #f1f8ff;
+    border: 1px solid #cfe2ff;
+    border-radius: 10px;
+    padding: 12px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.all_slots div:hover{
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.day{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+}
+.date{
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+.slottime{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.timming_container{
+    background: #f6faff;
+    border: 1px solid #d6e4f7;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.timming_container:hover{
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.timming{
+    font-weight: 500;
+}
+@media( max-width:768px){
+    .single_doctor_info{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .doc_info_img{
+        width: 120px;
+        height: 120px;
+    }
+    .doc_info{
+        margin-top: 15px;
+    }
+    .all_slots{
+        justify-content: center;
+    }
+    .slottime{
+        justify-content: center;
+    }
+    
+}
+
+
+

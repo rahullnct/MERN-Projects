@@ -1,21 +1,28 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../MyContext/AppContext";
 import {assets} from "../assets/assets";
-
+import '../CSS_Folders/DocInfo.css';
+import RelatedDoctor from "../Components/RelatedDoctor";
 function Doctor(){
+   const naviagte=useNavigate();
     let {id}=useParams();
-    console.log(id);
+    // console.log(id);
     const {doctors}=useContext(AppContext);
     const[docinfo,setdocinfo]=useState([]);
     const[docSlots,setdocSlots]=useState([]);
     const[slotTime,setslotTime]=useState(0);
+
+    console.log(docinfo);
+   
+   
     const all_info= doctors.filter((doc)=>doc._id === id)
     const filterdocinfo=()=>{
        setdocinfo(all_info);
     }
 
     const week=['SUN','MON','TUE','WED','THRU','FRI','SAT','SUN'];
+   
     const doctorSlots=async()=>{
       setdocSlots([]);
       let today= new Date();
@@ -29,7 +36,7 @@ function Doctor(){
         Endtime.setHours(21,0,0,0);
 
         if(today.getDate() === currentDate.getDate()){
-          currentDate.setHours(currentDate.getHours()>10 ? currentDate.getDate()+1 : 10);
+          currentDate.setHours(currentDate.getHours()>10 ? currentDate.getHours()+1 : 10);
           currentDate.setMinutes(currentDate.getMinutes()>30 ? 30: 0);
         }
         else 
@@ -40,7 +47,10 @@ function Doctor(){
 
         let timeSlots=[];
         while(currentDate < Endtime){
-          let formattedTime= currentDate.toLocaleTimeString([],{ hour:'2-digit',minute:'2-digit'})
+          let formattedTime= currentDate.toLocaleTimeString([],{hour:'2-digit',
+            minute:'2-digit',
+            hour12:true
+            })
           
           timeSlots.push({
             datetime:new Date(currentDate),
@@ -53,15 +63,13 @@ function Doctor(){
       }
 
     }
-
-
     useEffect(()=>{
       filterdocinfo();
-    },[])
+    },[id,doctors])
 
     useEffect(()=>{
      doctorSlots();
-    },[])
+    },[docinfo])
 
     useEffect(()=>{
       console.log(docSlots);
@@ -85,12 +93,8 @@ function Doctor(){
                 <span className="about_doc">About</span>
                 <p className="doc_about">{all_data.about}</p>
                  <p className="doc_fees">Appointment Fees: ${all_data.fees}</p>
-               </div>
-             </div>   
-            ))
-          }
 
-          <div className="all_slots">
+                  <div className="all_slots">
             {
               docSlots.length && docSlots.map((slots, index)=>(
                  <div key={index} onClick={()=> setslotTime(index)}>
@@ -102,13 +106,20 @@ function Doctor(){
           </div>
           <div className="slottime">
              {
-              docSlots.length && docSlots[slotTime].map((only_time,index)=>(
-                <div key={index}>
+              docSlots.length && docSlots[slotTime].slice(0,8).map((only_time,index)=>(
+                <div key={index} className="timming_container">
                   <span className="timming">{only_time.time.toLowerCase()}</span>
                 </div>
               ))
              }
            </div>
+              <button className="btn">Book an appointment</button>
+               </div>
+             </div>   
+            ))
+          }           
+
+          <RelatedDoctor id={id}  speciality={docinfo[0]?.speciality}/>
         </div>
             
         </div>
