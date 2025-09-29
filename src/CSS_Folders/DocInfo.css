@@ -24,6 +24,7 @@
 .doc_info_img{
     width: 160px;
     height: 160px;
+    background: #007bff;
     /* border-radius: 50%; */
     object-fit: cover;
     border: 4px solid #e6f0fa;

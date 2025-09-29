@@ -38,7 +38,7 @@ function AllDoctor(){
               <div className="select_doc">
                   {
                     filterdoc.map((all_dc)=>(
-                        <div className="all_doc_info">
+                        <div className="all_doc_info" onClick={()=>navigate(`/doctor/${all_dc._id}`)}>
                           <img src={all_dc.image} alt='doctor_image' className="doc_img"/>
                                  <li className="avil_not">Available</li>
                                  <span className="doc_name">{all_dc.name}</span>

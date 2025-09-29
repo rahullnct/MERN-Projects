@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
-import Doctor from './Pages/Doctor';
+// import Doctor from './Pages/Appointment';
 import Signup from './Authentication/Signup';
 import Login from './Authentication/Login';
 import NewComponent from './Components/NewComponent';
@@ -23,10 +23,10 @@ function App() {
   <Route index element={<Home />} />
   <Route path="about" element={<About />}/>
   <Route path="contact" element={<Contact/>}/>
-  <Route path="doctor/:id" element={<Doctor/>} />
+  <Route path="doctor/:id" element={<Appointment/>} />
   <Route path="alldoctors" element={<AllDoctor/>} />
   <Route path="signup" element={<Signup />} />
-  <Route path="appointment" element={<Appointment/>} />
+  {/* <Route path="appointment/:id" element={<Appointment/>} /> */}
   <Route path="alldoctors/:speciality" element={<AllDoctor/>} />
    {/* <Route path="specilist_doctor/:specility" element={<SpecilityDoctor/>} /> */}
   <Route path="login" element={<Login />} />

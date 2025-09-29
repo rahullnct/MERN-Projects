@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../MyContext/AppContext";
 import { useNavigate } from "react-router-dom";
+import './RelatedDoc.css';
 function RelatedDoctor({id,speciality}){
     const navigate=useNavigate();
      const [relatedDoc,setfilterDoc]=useState([]);
@@ -22,9 +23,9 @@ function RelatedDoctor({id,speciality}){
                 relatedDoc.slice(0,5).map((rel_doc,index)=>(
                   <div className="related_doc_info" key={index} onClick={()=>navigate(`/doctor/${rel_doc._id}`)}>
                   <img src={rel_doc.image} alt='rel_doctor_image' className="rel_doctor_image"/>
-                                 <li className="rel_available_or_not">Available</li>
-                                 <span className="rel_doctor_name">{rel_doc.name}</span>
-                                 <span className="rel_doctor_speciality">{rel_doc.speciality}</span>
+                    <li className="rel_available_or_not">Available</li>
+                    <span className="rel_doctor_name">{rel_doc.name}</span>
+                    <span className="rel_doctor_speciality">{rel_doc.speciality}</span>
                 </div>
                 ))
               }
